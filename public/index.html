@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Auth System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">User Authentication System</h1>
+    <div class="card">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <label for="signupUserId">UserId:</label>
+        <input type="text" id="signupUserId" required>
+        <br>
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" required>
+        <br>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="loginUserId">UserId:</label>
+        <input type="text" id="loginUserId" required>
+        <br>
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const userId = document.getElementById('signupUserId').value;
+      const password = document.getElementById('signupPassword').value;
+
+      const response = await fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, password })
+      });
+
+      const result = await response.json();
+      alert(result.message || result.error);
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const userId = document.getElementById('loginUserId').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, password })
+      });
+
+      const result = await response.json();
+      alert(result.message || result.error);
+    });
+  </script>
+</body>
+</html>
