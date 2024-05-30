@@ -27,6 +27,7 @@ Ensure you have the following installed on your system:
 - npm (comes with Node.js)
 - MongoDB (https://www.mongodb.com/)
 
+
 ### 1. Clone the Repository
 
 Clone this repository to your local machine using:
@@ -36,13 +37,13 @@ git clone https://github.com/your-username/user-auth-system.git
 cd user-auth-system
 code .
 
-### 2. Install the required packages
+### 2. Install the necessary packages:
 
 ```bash
 npm install express body-parser bcrypt sqlite3
 npm install bcryptjs
 
-Install the necessary packages:
+### Run the server:
 
 ```bash
 node server.js
