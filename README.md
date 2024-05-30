@@ -36,7 +36,7 @@ git clone https://github.com/your-username/user-auth-system.git
 cd user-auth-system
 code .
 
-Install the necessary packages:
+### 2. Install the required packages
 
 ```bash
 npm install express body-parser bcrypt sqlite3
