@@ -8,6 +8,7 @@ This project is a simple user authentication system with a Node.js backend and a
 - User Login
 - Password Encryption
 - Secure Authentication
+- Password database is not injectable
 
 ## Technologies Used
 
@@ -33,10 +34,9 @@ Ensure you have the following installed on your system:
 Clone this repository to your local machine using:
 
 ```bash
-git clone https://github.com/your-username/user-auth-system.git
+git clone https://github.com/tusharj23/user-auth-system.git
 cd user-auth-system
 code .
-
 ### 2. Install the necessary packages:
 
 ```bash
